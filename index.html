@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Soft Skills Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f6fa;--surface:#fff;--ink:#1b2040;--muted:#5b6285;--line:#dfe2ee;--a:#2a8c82;--b:#e8a23a;--c:#5a5fd0;--d:#c9ccdf;--on:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#12152b;--surface:#1b2040;--ink:#eef0fb;--muted:#a3a9cc;--line:#2c3260;--a:#5cc4b8;--b:#f0b65a;--c:#8f93f0;--d:#3a4175;--on:#12152b}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#12152b;--surface:#1b2040;--ink:#eef0fb;--muted:#a3a9cc;--line:#2c3260;--a:#5cc4b8;--b:#f0b65a;--c:#8f93f0;--d:#3a4175;--on:#12152b}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.65 Newsreader,Georgia,serif}
+h1,h2,h3,.ui{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--c);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:24px;align-items:center;height:60px;overflow-x:auto}
+nav b{font:800 20px "Bricolage Grotesque",sans-serif;margin-right:auto;white-space:nowrap}
+nav a{font:500 15px "Bricolage Grotesque",sans-serif;text-decoration:none;color:var(--muted);white-space:nowrap}
+nav a:hover{color:var(--ink)}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding:64px 0 72px}
+.hero h1{font-size:clamp(40px,6vw,68px);font-weight:800;letter-spacing:-.02em}
+.hero p{color:var(--muted);max-width:30em;margin:20px 0 28px}
+.btn{display:inline-block;font:700 16px "Bricolage Grotesque",sans-serif;padding:13px 22px;border-radius:999px;background:var(--ink);color:var(--bg);text-decoration:none;margin-right:10px}
+.btn.alt{background:none;color:var(--ink);border:1.5px solid var(--ink)}
+.rings{width:100%;height:auto;display:block}
+.ring{cursor:pointer;transition:fill .2s,stroke .2s}
+.ring:hover,.ring.on{fill:var(--zc);fill-opacity:.28}
+.rt{font:700 13px "Bricolage Grotesque",sans-serif;fill:var(--ink);pointer-events:none}
+.zinfo{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-top:12px;min-height:116px}
+.zinfo h3{font-size:20px;margin-bottom:4px}.zinfo p{margin:0;font-size:16px;color:var(--muted)}
+section{padding:72px 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:clamp(30px,4vw,44px);font-weight:800;letter-spacing:-.015em;margin-bottom:12px}
+.lede{color:var(--muted);max-width:36em;margin:0 0 36px}
+.topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 48px}
+.topics a{display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.topics strong{font:700 19px "Bricolage Grotesque",sans-serif;display:block}
+.topics span{color:var(--muted);font-size:16px}
+.topics a:hover strong{color:var(--c)}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:16px 0;font:700 19px "Bricolage Grotesque",sans-serif;display:flex;gap:16px;align-items:baseline}
+summary::-webkit-details-marker{display:none}
+summary i{font:700 14px "Bricolage Grotesque",sans-serif;font-style:normal;min-width:28px;color:var(--a)}
+summary::after{content:"+";margin-left:auto;color:var(--muted);font-size:24px;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin:0 0 18px 44px;color:var(--muted);max-width:40em}
+.cols{columns:2 420px;column-gap:56px}
+.cols details{break-inside:avoid}
+.pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.pair div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.pair h3{font-size:21px;margin-bottom:6px}.pair p{margin:0;font-size:16px;color:var(--muted)}
+.pair em{display:block;font-size:15px;margin-top:10px;color:var(--a);font-style:normal;font-weight:500}
+.smart{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px 40px}
+.smart h3{font-size:18px;margin-bottom:4px}.smart p{margin:0;font-size:16px;color:var(--muted)}
+.smart div{border-left:3px solid var(--b);padding-left:16px}
+.note{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--b);border-radius:10px;padding:18px 22px;max-width:44em}
+.note h3{font-size:20px;margin-bottom:6px}.note p{margin:0;color:var(--muted);font-size:16px}
+footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:40px}.wrap{padding:0 18px}details p{margin-left:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<nav><div class="wrap"><b>SoftSkills</b><a href="#topics">Topics</a><a href="#ips">15 rules</a><a href="#smart">Smart-12</a><a href="#kinesics">Body language</a><a href="#physio">Physiognomy</a></div></nav>
+
+<main>
+<div class="wrap hero" id="home">
+<div>
+<h1>People skills, explained one distance at a time.</h1>
+<p>A practical guide to interpersonal behaviour: how close to stand, what your posture says, and 15 habits that keep relationships and careers in good shape.</p>
+<a class="btn" href="#ips">Read the 15 rules</a><a class="btn alt" href="#topics">Browse topics</a>
+</div>
+<div>
+<svg class="rings" viewBox="0 0 400 400" role="img" aria-label="Four concentric zones of personal space. Select a ring to read about it.">
+<circle class="ring" data-z="3" cx="200" cy="200" r="196" fill="var(--d)" fill-opacity=".14" stroke="var(--d)" style="--zc:var(--d)" tabindex="0"/>
+<circle class="ring" data-z="2" cx="200" cy="200" r="145" fill="var(--c)" fill-opacity=".1" stroke="var(--c)" style="--zc:var(--c)" tabindex="0"/>
+<circle class="ring" data-z="1" cx="200" cy="200" r="95" fill="var(--b)" fill-opacity=".14" stroke="var(--b)" style="--zc:var(--b)" tabindex="0"/>
+<circle class="ring on" data-z="0" cx="200" cy="200" r="48" fill="var(--a)" fill-opacity=".2" stroke="var(--a)" style="--zc:var(--a)" tabindex="0"/>
+<text class="rt" x="200" y="205" text-anchor="middle">You</text>
+<text class="rt" x="200" y="136" text-anchor="middle">Personal</text>
+<text class="rt" x="200" y="84" text-anchor="middle">Social</text>
+<text class="rt" x="200" y="32" text-anchor="middle">Public</text>
+<text class="rt" x="200" y="175" text-anchor="middle" font-size="11" style="fill:var(--muted)">Intimate</text>
+</svg>
+<div class="zinfo" id="zinfo" aria-live="polite"></div>
+</div>
+</div>
+
+<section id="topics"><div class="wrap">
+<h2>Topics</h2>
+<p class="lede">Each topic is a short lesson. Start with whichever matches the situation in front of you.</p>
+<div class="topics">
+<a href="#topics"><div><strong>Introduction</strong><span>What soft skills are and why they differentiate you</span></div></a>
+<a href="#proxemics"><div><strong>Proxemics</strong><span>Distance management, after Edward T. Hall</span></div></a>
+<a href="#physio"><div><strong>Physiognomy</strong><span>Reading character from appearance, and its limits</span></div></a>
+<a href="#topics"><div><strong>Self-esteem</strong><span>Respect yourself first</span></div></a>
+<a href="#ips"><div><strong>IPS-15</strong><span>Fifteen interpersonal habits</span></div></a>
+<a href="#topics"><div><strong>Face language</strong><span>The idea of “face” as a person’s public image</span></div></a>
+<a href="#topics"><div><strong>Personality by attitude</strong><span>Leader, perfectionist, socializer, hermit</span></div></a>
+<a href="#smart"><div><strong>Smart-12</strong><span>Professionalism guidelines</span></div></a>
+<a href="#kinesics"><div><strong>Kinesics</strong><span>Body language and gesture</span></div></a>
+<a href="#topics"><div><strong>Managing a group during a presentation</strong><span>Coordinating people so it runs smoothly</span></div></a>
+<a href="#topics"><div><strong>Understanding people</strong><span>Appreciate thoughts and feelings you don’t share</span></div></a>
+<a href="#topics"><div><strong>12 barriers in people skills</strong><span>Communication roadblocks named by Thomas Gordon</span></div></a>
+</div>
+</div></section>
+
+<section id="proxemics"><div class="wrap">
+<h2>Proxemics: who gets which distance</h2>
+<p class="lede">Select a ring above, or read the zones here. Each one comes with a role you play and rules to follow.</p>
+<div class="pair" id="zlist"></div>
+</div></section>
+
+<section id="ips"><div class="wrap">
+<h2>The 15 interpersonal rules</h2>
+<p class="lede">Open any rule to read the reasoning behind it.</p>
+<div class="cols">
+<details><summary><i>1</i>Be responsible</summary><p>Answer for your problems and don’t run from them. The more you face, the better a problem-solver you become.</p></details>
+<details><summary><i>2</i>Choose your words carefully</summary><p>Think before you speak. A house can be rebuilt, but a damaged relationship is harder to repair.</p></details>
+<details><summary><i>3</i>Never be sarcastic</summary><p>Humour turns into sarcasm when it crosses a line. Joke about situations, not about people.</p></details>
+<details><summary><i>4</i>Practise humility</summary><p>Education and experience without humility become ego. Soft-spoken people tend to be well regarded.</p></details>
+<details><summary><i>5</i>Discuss but never argue</summary><p>You can win an argument and still lose a friend, a job or respect.</p></details>
+<details><summary><i>6</i>Stop playing the blame game</summary><p>Your present is the result of your past, and your future is the result of your present.</p></details>
+<details><summary><i>7</i>Never complain or criticise</summary><p>Complaints produce excuses, not solutions. Be an example instead.</p></details>
+<details><summary><i>8</i>Turn your promise into commitment</summary><p>A promise is a feeling put into words. A commitment is carrying it out, legally and morally.</p></details>
+<details><summary><i>9</i>Never gossip</summary><p>Whoever speaks against someone in front of you will speak against you in front of others.</p></details>
+<details><summary><i>10</i>Never bear grudges</summary><p>Give it time, focus on your goal and let people go.</p></details>
+<details><summary><i>11</i>Be grateful, never expect gratitude</summary><p>Say thank you and sorry to the people close to you, and remember their favours.</p></details>
+<details><summary><i>12</i>Be considerate</summary><p>Give others the benefit of the doubt and assume a positive reason before you analyse their behaviour.</p></details>
+<details><summary><i>13</i>Accept mistakes willingly and at once</summary><p>Learning from a mistake is wise. Repeating it is the real failure.</p></details>
+<details><summary><i>14</i>Think win-win</summary><p>You’ll be happy and successful when you serve people and make sure others benefit too.</p></details>
+<details><summary><i>15</i>Develop a sense of humour</summary><p>Laughter is a free stress reliever. Keep yourself and the people around you happy.</p></details>
+</div>
+</div></section>
+
+<section id="smart"><div class="wrap">
+<h2>Smart-12: professionalism</h2>
+<p class="lede">Professionalism is known as smartness in the international market. These twelve habits are the checklist.</p>
+<div class="smart">
+<div><h3>Never avoid strangers</h3><p>Be comfortable talking to anyone. You never know who you’ll need, or when.</p></div>
+<div><h3>Make a good first impression</h3><p>Strangers form a view quickly. Keep the introduction brief and professional.</p></div>
+<div><h3>Never look down while speaking</h3><p>Look at the person. Looking down signals low confidence.</p></div>
+<div><h3>Never slouch</h3><p>Good posture looks confident and makes you appear taller.</p></div>
+<div><h3>Never frown</h3><p>Smile, even in a bad mood. People like to spend time with lively people.</p></div>
+<div><h3>Be a charming conversationalist</h3><p>Speak well rather than much, and talk about what the other person cares about.</p></div>
+<div><h3>Be a listener</h3><p>People like to talk about themselves, and listening shows you what they plan next.</p></div>
+<div><h3>Stay in touch</h3><p>Check in with acquaintances every couple of weeks and on special days.</p></div>
+<div><h3>Be a social star</h3><p>Make time for gatherings and be there to welcome and see off friends.</p></div>
+<div><h3>Face your fears</h3><p>Don’t advertise your weaknesses. Use logic and common sense, not emotion.</p></div>
+<div><h3>Be proactive</h3><p>If something goes against your expectations, say so politely instead of blaming.</p></div>
+<div><h3>Be open-minded</h3><p>Accept people as they are and respect their knowledge, not their caste, religion, gender or culture.</p></div>
+</div>
+</div></section>
+
+<section id="kinesics"><div class="wrap">
+<h2>Kinesics: body language</h2>
+<p class="lede">Kinesics is the study of gesture, facial expression, posture and eye movement. Treat each cue as a hint and check it against context.</p>
+<div class="pair">
+<div><h3>Handshake</h3><p>Shows confidence and attitude.</p><em>Firm: confident. Weak: unsure. Palm down: controlling.</em></div>
+<div><h3>Arm crossing</h3><p>Often defensiveness or discomfort.</p><em>Tight: disagreement. Loose: comfortable.</em></div>
+<div><h3>Eye contact</h3><p>Interest, attention and confidence.</p><em>Direct: confident. Looking down: submissive.</em></div>
+<div><h3>Posture</h3><p>Attitude and self-perception.</p><em>Upright: confident. Leaning in: interested.</em></div>
+<div><h3>Facial expression</h3><p>The most expressive channel.</p><em>Raised brows: surprise. Lip biting: nerves.</em></div>
+<div><h3>Hand gestures</h3><p>Emphasis, or nervousness.</p><em>Open palms: openness. Pointing: aggression.</em></div>
+</div>
+</div></section>
+
+<section id="physio"><div class="wrap">
+<h2>Physiognomy</h2>
+<p class="lede">Physiognomy is the practice of judging character from the face and body. It sits in this guide as history and a talking point.</p>
+<div class="note"><h3>Read it as a prompt, not a verdict</h3><p>Modern psychology doesn’t support judging personality from appearance. Use these ideas to become more observant, and never to screen or label people.</p></div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><span>SoftSkills Guide</span><span>Contact: info@softskillsguide.com</span><span>Mon–Fri, 9am–6pm</span></div></footer>
+
+<script>
+var Z=[
+{n:"Intimate zone",d:"0–18 in",r:"Parents, spouse, children",role:"Giver",rules:"Be emotional, be transparent, take criticism as advice."},
+{n:"Personal zone",d:"18 in–4 ft",r:"Siblings, best friends, well-wishers",role:"Advisor",rules:"Never expect, help only when needed, keep financial help within limits."},
+{n:"Social zone",d:"4–12 ft",r:"Relatives, colleagues, neighbours",role:"Taker",rules:"Don’t accept criticism, help if you have time, no financial help."},
+{n:"Public zone",d:"12 ft and beyond",r:"Acquaintances, mutual friends, referrals",role:"Ignore",rules:"Ignore them."}];
+var info=document.getElementById("zinfo"),list=document.getElementById("zlist");
+Z.forEach(function(z){var e=document.createElement("div");e.innerHTML="<h3>"+z.n+"</h3><p>"+z.d+" · "+z.r+"</p><em>Role: "+z.role+". "+z.rules+"</em>";list.appendChild(e)});
+function show(i){var z=Z[i];info.innerHTML="<h3>"+z.n+" <span style='color:var(--muted);font-weight:500;font-size:16px'>"+z.d+"</span></h3><p>"+z.r+". Your role: <b>"+z.role+"</b>. "+z.rules+"</p>";
+document.querySelectorAll(".ring").forEach(function(r){r.classList.toggle("on",+r.dataset.z===i)})}
+document.querySelectorAll(".ring").forEach(function(r){
+r.addEventListener("click",function(){show(+r.dataset.z)});
+r.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();show(+r.dataset.z)}})});
+show(0);
+</script>
+</body>
+</html>
