@@ -1,200 +1,686 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Soft Skills Guide</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Newsreader:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#f5f6fa;--surface:#fff;--ink:#1b2040;--muted:#5b6285;--line:#dfe2ee;--a:#2a8c82;--b:#e8a23a;--c:#5a5fd0;--d:#c9ccdf;--on:#fff;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#12152b;--surface:#1b2040;--ink:#eef0fb;--muted:#a3a9cc;--line:#2c3260;--a:#5cc4b8;--b:#f0b65a;--c:#8f93f0;--d:#3a4175;--on:#12152b}}
-:root[data-theme="dark"]{color-scheme:dark;--bg:#12152b;--surface:#1b2040;--ink:#eef0fb;--muted:#a3a9cc;--line:#2c3260;--a:#5cc4b8;--b:#f0b65a;--c:#8f93f0;--d:#3a4175;--on:#12152b}
-*,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:70px}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.65 Newsreader,Georgia,serif}
-h1,h2,h3,.ui{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
-a{color:inherit}
-:focus-visible{outline:3px solid var(--c);outline-offset:3px;border-radius:4px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
-nav .wrap{display:flex;gap:24px;align-items:center;height:60px;overflow-x:auto}
-nav b{font:800 20px "Bricolage Grotesque",sans-serif;margin-right:auto;white-space:nowrap}
-nav a{font:500 15px "Bricolage Grotesque",sans-serif;text-decoration:none;color:var(--muted);white-space:nowrap}
-nav a:hover{color:var(--ink)}
-.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding:64px 0 72px}
-.hero h1{font-size:clamp(40px,6vw,68px);font-weight:800;letter-spacing:-.02em}
-.hero p{color:var(--muted);max-width:30em;margin:20px 0 28px}
-.btn{display:inline-block;font:700 16px "Bricolage Grotesque",sans-serif;padding:13px 22px;border-radius:999px;background:var(--ink);color:var(--bg);text-decoration:none;margin-right:10px}
-.btn.alt{background:none;color:var(--ink);border:1.5px solid var(--ink)}
-.rings{width:100%;height:auto;display:block}
-.ring{cursor:pointer;transition:fill .2s,stroke .2s}
-.ring:hover,.ring.on{fill:var(--zc);fill-opacity:.28}
-.rt{font:700 13px "Bricolage Grotesque",sans-serif;fill:var(--ink);pointer-events:none}
-.zinfo{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-top:12px;min-height:116px}
-.zinfo h3{font-size:20px;margin-bottom:4px}.zinfo p{margin:0;font-size:16px;color:var(--muted)}
-section{padding:72px 0;border-top:1px solid var(--line)}
-section>.wrap>h2{font-size:clamp(30px,4vw,44px);font-weight:800;letter-spacing:-.015em;margin-bottom:12px}
-.lede{color:var(--muted);max-width:36em;margin:0 0 36px}
-.topics{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 48px}
-.topics a{display:flex;justify-content:space-between;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);text-decoration:none}
-.topics strong{font:700 19px "Bricolage Grotesque",sans-serif;display:block}
-.topics span{color:var(--muted);font-size:16px}
-.topics a:hover strong{color:var(--c)}
-details{border-bottom:1px solid var(--line)}
-summary{list-style:none;cursor:pointer;padding:16px 0;font:700 19px "Bricolage Grotesque",sans-serif;display:flex;gap:16px;align-items:baseline}
-summary::-webkit-details-marker{display:none}
-summary i{font:700 14px "Bricolage Grotesque",sans-serif;font-style:normal;min-width:28px;color:var(--a)}
-summary::after{content:"+";margin-left:auto;color:var(--muted);font-size:24px;line-height:1}
-details[open] summary::after{content:"–"}
-details p{margin:0 0 18px 44px;color:var(--muted);max-width:40em}
-.cols{columns:2 420px;column-gap:56px}
-.cols details{break-inside:avoid}
-.pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.pair div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
-.pair h3{font-size:21px;margin-bottom:6px}.pair p{margin:0;font-size:16px;color:var(--muted)}
-.pair em{display:block;font-size:15px;margin-top:10px;color:var(--a);font-style:normal;font-weight:500}
-.smart{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px 40px}
-.smart h3{font-size:18px;margin-bottom:4px}.smart p{margin:0;font-size:16px;color:var(--muted)}
-.smart div{border-left:3px solid var(--b);padding-left:16px}
-.note{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--b);border-radius:10px;padding:18px 22px;max-width:44em}
-.note h3{font-size:20px;margin-bottom:6px}.note p{margin:0;color:var(--muted);font-size:16px}
-footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-size:15px}
-footer .wrap{display:flex;flex-wrap:wrap;gap:12px 32px;justify-content:space-between}
-@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:40px}.wrap{padding:0 18px}details p{margin-left:0}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MND CODE | Interview &amp; Soft Skills Coaching</title>
+  <meta name="description" content="Explore practical interview preparation, communication, confidence-building and soft-skills coaching for students and professionals with MND CODE.">
+  <meta name="theme-color" content="#17233D">
+  <!-- TODO before launch: set the real domain, then uncomment.
+  <link rel="canonical" href="https://www.your-domain.com/">
+  <meta property="og:url" content="https://www.your-domain.com/">
+  <meta property="og:image" content="https://www.your-domain.com/assets/images/social-preview.png">
+  <meta name="twitter:image" content="https://www.your-domain.com/assets/images/social-preview.png">
+  -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="MND CODE">
+  <meta property="og:title" content="MND CODE | Interview &amp; Soft Skills Coaching">
+  <meta property="og:description" content="Practical interview coaching and soft-skills training for students, professionals and ambitious individuals.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MND CODE | Interview &amp; Soft Skills Coaching">
+  <meta name="twitter:description" content="Practical interview coaching and soft-skills training for students, professionals and ambitious individuals.">
+  <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
-<nav><div class="wrap"><b>SoftSkills</b><a href="#topics">Topics</a><a href="#ips">15 rules</a><a href="#smart">Smart-12</a><a href="#kinesics">Body language</a><a href="#physio">Physiognomy</a></div></nav>
 
-<main>
-<div class="wrap hero" id="home">
-<div>
-<h1>People skills, explained one distance at a time.</h1>
-<p>A practical guide to interpersonal behaviour: how close to stand, what your posture says, and 15 habits that keep relationships and careers in good shape.</p>
-<a class="btn" href="#ips">Read the 15 rules</a><a class="btn alt" href="#topics">Browse topics</a>
-</div>
-<div>
-<svg class="rings" viewBox="0 0 400 400" role="img" aria-label="Four concentric zones of personal space. Select a ring to read about it.">
-<circle class="ring" data-z="3" cx="200" cy="200" r="196" fill="var(--d)" fill-opacity=".14" stroke="var(--d)" style="--zc:var(--d)" tabindex="0"/>
-<circle class="ring" data-z="2" cx="200" cy="200" r="145" fill="var(--c)" fill-opacity=".1" stroke="var(--c)" style="--zc:var(--c)" tabindex="0"/>
-<circle class="ring" data-z="1" cx="200" cy="200" r="95" fill="var(--b)" fill-opacity=".14" stroke="var(--b)" style="--zc:var(--b)" tabindex="0"/>
-<circle class="ring on" data-z="0" cx="200" cy="200" r="48" fill="var(--a)" fill-opacity=".2" stroke="var(--a)" style="--zc:var(--a)" tabindex="0"/>
-<text class="rt" x="200" y="205" text-anchor="middle">You</text>
-<text class="rt" x="200" y="136" text-anchor="middle">Personal</text>
-<text class="rt" x="200" y="84" text-anchor="middle">Social</text>
-<text class="rt" x="200" y="32" text-anchor="middle">Public</text>
-<text class="rt" x="200" y="175" text-anchor="middle" font-size="11" style="fill:var(--muted)">Intimate</text>
+<!-- =========================================================
+     SVG ICON SPRITE (original line icons)
+     ========================================================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.7 2.7L16 9.8"/></symbol>
+    <symbol id="i-interview" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H9l-4 3v-3H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><path d="M19 9h1a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2v2.5L17 18h-4a2 2 0 0 1-1.8-1.1"/><path d="M6 8h6M6 11h3"/></symbol>
+    <symbol id="i-people" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M15.8 14.2c2.9.4 5.2 2.8 5.2 5.8"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="8" r="3.5"/><path d="M4 21c.8-4 3.6-6.5 7-6.5 2.2 0 4.1 1 5.4 2.7"/><path d="M19 2.5l.9 2.1 2.1.9-2.1.9-.9 2.1-.9-2.1-2.1-.9 2.1-.9z"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3.5M8.5 21.5h7"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-8-4.7-8-10.6A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 8 2.9c0 5.9-8 10.6-8 10.6z"/><path d="M7.5 12h2.2l1.2-2.2 2 4 1.2-1.8h2.4"/></symbol>
+    <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="4"/><circle cx="11" cy="13" r=".8" fill="currentColor"/><path d="M14 10l7-7M17 3h4v4"/></symbol>
+    <symbol id="i-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21.5V3.5"/><path d="M5 4h12l-2.5 4.5L17 13H5"/></symbol>
+    <symbol id="i-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3.5l4.5 4.5L9 18.5H4.5V14z"/><path d="M12.5 6l4.5 4.5"/><path d="M3 22c1.6 0 2.4-1 4-1s2.4 1 4 1 2.4-1 4-1"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5M22 9v6"/></symbol>
+    <symbol id="i-docsearch" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 21H6a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h8l4 4v3"/><path d="M8 8h5M8 12h3"/><circle cx="16.5" cy="15.5" r="3.3"/><path d="M19 18l2.5 2.5"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18M12 12v2"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 6-7"/><path d="M16 7h4v4"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.4 2.5 3.7 5.5 3.7 9s-1.3 6.5-3.7 9c-2.4-2.5-3.7-5.5-3.7-9S9.6 5.5 12 3z"/></symbol>
+    <symbol id="i-laptop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-lang" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 5h9M7.5 3v2M5 5c.8 3.4 3.2 6 6 7.5M10 5c-.8 3.4-3.2 6-6 7.5"/><path d="M13 21l4-9 4 9M14.4 18h5.2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+  </defs>
 </svg>
-<div class="zinfo" id="zinfo" aria-live="polite"></div>
-</div>
-</div>
 
-<section id="topics"><div class="wrap">
-<h2>Topics</h2>
-<p class="lede">Each topic is a short lesson. Start with whichever matches the situation in front of you.</p>
-<div class="topics">
-<a href="#topics"><div><strong>Introduction</strong><span>What soft skills are and why they differentiate you</span></div></a>
-<a href="#proxemics"><div><strong>Proxemics</strong><span>Distance management, after Edward T. Hall</span></div></a>
-<a href="#physio"><div><strong>Physiognomy</strong><span>Reading character from appearance, and its limits</span></div></a>
-<a href="#topics"><div><strong>Self-esteem</strong><span>Respect yourself first</span></div></a>
-<a href="#ips"><div><strong>IPS-15</strong><span>Fifteen interpersonal habits</span></div></a>
-<a href="#topics"><div><strong>Face language</strong><span>The idea of “face” as a person’s public image</span></div></a>
-<a href="#topics"><div><strong>Personality by attitude</strong><span>Leader, perfectionist, socializer, hermit</span></div></a>
-<a href="#smart"><div><strong>Smart-12</strong><span>Professionalism guidelines</span></div></a>
-<a href="#kinesics"><div><strong>Kinesics</strong><span>Body language and gesture</span></div></a>
-<a href="#topics"><div><strong>Managing a group during a presentation</strong><span>Coordinating people so it runs smoothly</span></div></a>
-<a href="#topics"><div><strong>Understanding people</strong><span>Appreciate thoughts and feelings you don’t share</span></div></a>
-<a href="#topics"><div><strong>12 barriers in people skills</strong><span>Communication roadblocks named by Thomas Gordon</span></div></a>
-</div>
-</div></section>
+<a class="skip-link" href="#main">Skip to content</a>
 
-<section id="proxemics"><div class="wrap">
-<h2>Proxemics: who gets which distance</h2>
-<p class="lede">Select a ring above, or read the zones here. Each one comes with a role you play and rules to follow.</p>
-<div class="pair" id="zlist"></div>
-</div></section>
+<!-- =========================================================
+     HEADER
+     ========================================================= -->
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="#home" aria-label="MND CODE — home">
+      <img class="brand-mark" src="assets/logo/favicon.svg" alt="" width="36" height="36">
+      <span class="brand-text">MND CODE<small>Interview &amp; Soft Skills</small></span>
+    </a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span></button>
+    <nav class="nav" id="site-nav" aria-label="Main">
+      <ul class="nav-list">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About the Coach</a></li>
+        <li><a href="#programs">Training Programs</a></li>
+        <li><a href="#subjects">Subjects</a></li>
+        <li><a href="#approach">Learning Approach</a></li>
+        <li><a href="#faq">FAQs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="btn btn--sm nav-cta" href="#contact">Book a Free Intro Call</a>
+    </nav>
+  </div>
+</header>
 
-<section id="ips"><div class="wrap">
-<h2>The 15 interpersonal rules</h2>
-<p class="lede">Open any rule to read the reasoning behind it.</p>
-<div class="cols">
-<details><summary><i>1</i>Be responsible</summary><p>Answer for your problems and don’t run from them. The more you face, the better a problem-solver you become.</p></details>
-<details><summary><i>2</i>Choose your words carefully</summary><p>Think before you speak. A house can be rebuilt, but a damaged relationship is harder to repair.</p></details>
-<details><summary><i>3</i>Never be sarcastic</summary><p>Humour turns into sarcasm when it crosses a line. Joke about situations, not about people.</p></details>
-<details><summary><i>4</i>Practise humility</summary><p>Education and experience without humility become ego. Soft-spoken people tend to be well regarded.</p></details>
-<details><summary><i>5</i>Discuss but never argue</summary><p>You can win an argument and still lose a friend, a job or respect.</p></details>
-<details><summary><i>6</i>Stop playing the blame game</summary><p>Your present is the result of your past, and your future is the result of your present.</p></details>
-<details><summary><i>7</i>Never complain or criticise</summary><p>Complaints produce excuses, not solutions. Be an example instead.</p></details>
-<details><summary><i>8</i>Turn your promise into commitment</summary><p>A promise is a feeling put into words. A commitment is carrying it out, legally and morally.</p></details>
-<details><summary><i>9</i>Never gossip</summary><p>Whoever speaks against someone in front of you will speak against you in front of others.</p></details>
-<details><summary><i>10</i>Never bear grudges</summary><p>Give it time, focus on your goal and let people go.</p></details>
-<details><summary><i>11</i>Be grateful, never expect gratitude</summary><p>Say thank you and sorry to the people close to you, and remember their favours.</p></details>
-<details><summary><i>12</i>Be considerate</summary><p>Give others the benefit of the doubt and assume a positive reason before you analyse their behaviour.</p></details>
-<details><summary><i>13</i>Accept mistakes willingly and at once</summary><p>Learning from a mistake is wise. Repeating it is the real failure.</p></details>
-<details><summary><i>14</i>Think win-win</summary><p>You’ll be happy and successful when you serve people and make sure others benefit too.</p></details>
-<details><summary><i>15</i>Develop a sense of humour</summary><p>Laughter is a free stress reliever. Keep yourself and the people around you happy.</p></details>
-</div>
-</div></section>
+<main id="main">
 
-<section id="smart"><div class="wrap">
-<h2>Smart-12: professionalism</h2>
-<p class="lede">Professionalism is known as smartness in the international market. These twelve habits are the checklist.</p>
-<div class="smart">
-<div><h3>Never avoid strangers</h3><p>Be comfortable talking to anyone. You never know who you’ll need, or when.</p></div>
-<div><h3>Make a good first impression</h3><p>Strangers form a view quickly. Keep the introduction brief and professional.</p></div>
-<div><h3>Never look down while speaking</h3><p>Look at the person. Looking down signals low confidence.</p></div>
-<div><h3>Never slouch</h3><p>Good posture looks confident and makes you appear taller.</p></div>
-<div><h3>Never frown</h3><p>Smile, even in a bad mood. People like to spend time with lively people.</p></div>
-<div><h3>Be a charming conversationalist</h3><p>Speak well rather than much, and talk about what the other person cares about.</p></div>
-<div><h3>Be a listener</h3><p>People like to talk about themselves, and listening shows you what they plan next.</p></div>
-<div><h3>Stay in touch</h3><p>Check in with acquaintances every couple of weeks and on special days.</p></div>
-<div><h3>Be a social star</h3><p>Make time for gatherings and be there to welcome and see off friends.</p></div>
-<div><h3>Face your fears</h3><p>Don’t advertise your weaknesses. Use logic and common sense, not emotion.</p></div>
-<div><h3>Be proactive</h3><p>If something goes against your expectations, say so politely instead of blaming.</p></div>
-<div><h3>Be open-minded</h3><p>Accept people as they are and respect their knowledge, not their caste, religion, gender or culture.</p></div>
-</div>
-</div></section>
+<!-- =========================================================
+     HERO
+     ========================================================= -->
+<section class="hero" id="home" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">MND CODE · Interview &amp; Soft Skills Coaching</p>
+      <h1 id="hero-title">Build confidence. <span>Communicate with impact.</span> <em>Get interview-ready.</em></h1>
+      <p class="hero-lead">Practical, customised coaching to help students and professionals strengthen interview performance, communication, personality development and workplace skills.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#programs">Explore Training <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn--ghost" href="#contact">Enquire About Coaching</a>
+      </div>
+      <ul class="trust-list">
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Online and offline coaching options</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Practical, actionable learning</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Training in English, Hindi, Telugu and Odia</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Programs for students and working professionals</li>
+      </ul>
+    </div>
 
-<section id="kinesics"><div class="wrap">
-<h2>Kinesics: body language</h2>
-<p class="lede">Kinesics is the study of gesture, facial expression, posture and eye movement. Treat each cue as a hint and check it against context.</p>
-<div class="pair">
-<div><h3>Handshake</h3><p>Shows confidence and attitude.</p><em>Firm: confident. Weak: unsure. Palm down: controlling.</em></div>
-<div><h3>Arm crossing</h3><p>Often defensiveness or discomfort.</p><em>Tight: disagreement. Loose: comfortable.</em></div>
-<div><h3>Eye contact</h3><p>Interest, attention and confidence.</p><em>Direct: confident. Looking down: submissive.</em></div>
-<div><h3>Posture</h3><p>Attitude and self-perception.</p><em>Upright: confident. Leaning in: interested.</em></div>
-<div><h3>Facial expression</h3><p>The most expressive channel.</p><em>Raised brows: surprise. Lip biting: nerves.</em></div>
-<div><h3>Hand gestures</h3><p>Emphasis, or nervousness.</p><em>Open palms: openness. Pointing: aggression.</em></div>
-</div>
-</div></section>
+    <div class="hero-art">
+      <svg viewBox="0 0 520 470" role="img" aria-labelledby="hero-art-title">
+        <title id="hero-art-title">Illustration of two people in a coaching conversation, with speech bubbles and an interview-readiness checklist</title>
+        <defs>
+          <linearGradient id="g-bar" x1="0" x2="1"><stop offset="0" stop-color="#3CC9B4"/><stop offset="1" stop-color="#A89FF2"/></linearGradient>
+          <linearGradient id="g-table" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#2A3D66"/><stop offset="1" stop-color="#1E2C4A"/></linearGradient>
+          <radialGradient id="g-glow"><stop offset="0" stop-color="#3CC9B4" stop-opacity=".28"/><stop offset="1" stop-color="#3CC9B4" stop-opacity="0"/></radialGradient>
+        </defs>
 
-<section id="physio"><div class="wrap">
-<h2>Physiognomy</h2>
-<p class="lede">Physiognomy is the practice of judging character from the face and body. It sits in this guide as history and a talking point.</p>
-<div class="note"><h3>Read it as a prompt, not a verdict</h3><p>Modern psychology doesn’t support judging personality from appearance. Use these ideas to become more observant, and never to screen or label people.</p></div>
-</div></section>
+        <circle cx="260" cy="235" r="210" fill="url(#g-glow)"/>
+
+        <!-- orbit rings -->
+        <g class="spin-slow">
+          <circle cx="260" cy="235" r="205" fill="none" stroke="#FFFFFF" stroke-opacity=".1" stroke-dasharray="2 10" stroke-linecap="round" stroke-width="2"/>
+          <circle cx="260" cy="30" r="5" fill="#3CC9B4"/>
+          <circle cx="465" cy="235" r="4" fill="#A89FF2"/>
+          <circle cx="115" cy="380" r="3.5" fill="#F2B45B"/>
+        </g>
+        <g class="spin-rev">
+          <circle cx="260" cy="235" r="160" fill="none" stroke="#FFFFFF" stroke-opacity=".08" stroke-width="1.5"/>
+          <circle cx="100" cy="235" r="4" fill="#F2B45B"/>
+          <circle cx="373" cy="122" r="3" fill="#3CC9B4"/>
+        </g>
+
+        <!-- person A (left) -->
+        <g>
+          <path d="M118 302c0-36 20-54 52-54s52 18 52 54z" fill="#159B8A"/>
+          <path d="M152 250l18 22 18-22" fill="none" stroke="#0E7A6C" stroke-width="3" stroke-linejoin="round"/>
+          <circle cx="170" cy="214" r="27" fill="#E2AE85"/>
+          <path d="M143 210c0-17 12-27 27-27s28 9 28 24c-9-1-19-6-25-13-5 8-17 15-30 16z" fill="#2B2236"/>
+        </g>
+        <!-- person B (right) -->
+        <g>
+          <path d="M298 302c0-36 20-54 52-54s52 18 52 54z" fill="#7568D9"/>
+          <path d="M335 250h30v10a15 15 0 0 1-30 0z" fill="#5E52C2"/>
+          <circle cx="350" cy="214" r="27" fill="#B97D57"/>
+          <path d="M323 214c-2-19 10-31 27-31s29 12 27 31c-3-9-8-16-14-19-8 5-24 7-40 19z" fill="#1C1A2B"/>
+          <circle cx="350" cy="181" r="10" fill="#1C1A2B"/>
+        </g>
+
+        <!-- table -->
+        <rect x="96" y="298" width="328" height="16" rx="8" fill="url(#g-table)"/>
+        <rect x="150" y="286" width="42" height="12" rx="3" fill="#FFFFFF" fill-opacity=".85"/>
+        <path d="M156 291h22M156 295h14" stroke="#9AA6BC" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M320 284h18v14h-18z" fill="#F2B45B"/>
+        <path d="M338 288h4a3 3 0 0 1 0 6h-4" fill="none" stroke="#F2B45B" stroke-width="2"/>
+
+        <!-- speech bubble A -->
+        <g class="bubble-in d1"><g class="float-a">
+          <rect x="54" y="92" width="156" height="64" rx="18" fill="#FFFFFF"/>
+          <path d="M150 154l14 18 2-18z" fill="#FFFFFF"/>
+          <rect x="74" y="110" width="92" height="7" rx="3.5" fill="#159B8A"/>
+          <rect x="74" y="124" width="116" height="6" rx="3" fill="#D5DBE5"/>
+          <rect x="74" y="136" width="72" height="6" rx="3" fill="#D5DBE5"/>
+        </g></g>
+
+        <!-- speech bubble B (typing) -->
+        <g class="bubble-in d2"><g class="float-b">
+          <rect x="312" y="74" width="150" height="58" rx="18" fill="#7568D9"/>
+          <path d="M350 130l-6 20 20-20z" fill="#7568D9"/>
+          <g class="typing" fill="#FFFFFF">
+            <circle cx="365" cy="103" r="5"/>
+            <circle cx="387" cy="103" r="5"/>
+            <circle cx="409" cy="103" r="5"/>
+          </g>
+          <circle class="pulse-dot" cx="458" cy="78" r="6" fill="#F2B45B"/>
+        </g></g>
+
+        <!-- check badge -->
+        <g class="bubble-in d3"><g class="float-c">
+          <circle cx="260" cy="160" r="26" fill="#F2B45B"/>
+          <circle cx="260" cy="160" r="33" fill="none" stroke="#F2B45B" stroke-opacity=".35" stroke-width="2"/>
+          <path d="M248 160l8 8 16-17" fill="none" stroke="#10182B" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </g></g>
+
+        <!-- readiness card -->
+        <g class="bubble-in d4">
+          <rect x="106" y="340" width="308" height="112" rx="18" fill="#FFFFFF" fill-opacity=".06" stroke="#FFFFFF" stroke-opacity=".16"/>
+          <text x="128" y="366" fill="#FFFFFF" font-family="Sora, sans-serif" font-size="13" font-weight="600">Interview readiness</text>
+          <rect x="128" y="376" width="264" height="6" rx="3" fill="#FFFFFF" fill-opacity=".12"/>
+          <rect class="progress-fill" x="128" y="376" width="206" height="6" rx="3" fill="url(#g-bar)"/>
+          <g font-family="Inter, sans-serif" font-size="12" fill="#DCE2EE">
+            <circle cx="136" cy="404" r="8" fill="#3CC9B4" fill-opacity=".18"/>
+            <path class="draw-check c1" d="M132 404l3 3 5-6" fill="none" stroke="#3CC9B4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="150" y="408">Structured answers</text>
+            <circle cx="136" cy="430" r="8" fill="#3CC9B4" fill-opacity=".18"/>
+            <path class="draw-check c2" d="M132 430l3 3 5-6" fill="none" stroke="#3CC9B4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="150" y="434">Clear delivery</text>
+            <circle cx="276" cy="404" r="8" fill="#A89FF2" fill-opacity=".2"/>
+            <path class="draw-check c3" d="M272 404l3 3 5-6" fill="none" stroke="#A89FF2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="290" y="408">Confident presence</text>
+            <circle cx="276" cy="430" r="8" fill="#FFFFFF" fill-opacity=".1"/>
+            <circle class="pulse-dot" cx="276" cy="430" r="2.5" fill="#F2B45B"/>
+            <text x="290" y="434">Active listening</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     ABOUT THE COACH
+     ========================================================= -->
+<section class="section" id="about" aria-labelledby="about-title">
+  <div class="container about-grid">
+    <div class="orbit reveal">
+      <svg viewBox="0 0 400 400" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="g-core" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#17233D"/><stop offset="1" stop-color="#10182B"/></linearGradient>
+        </defs>
+        <circle cx="200" cy="200" r="185" fill="#FFFFFF" stroke="#E3E7EE"/>
+        <g class="orbit-ring-3">
+          <circle cx="200" cy="200" r="168" fill="none" stroke="#C9D3E3" stroke-dasharray="2 9" stroke-linecap="round" stroke-width="2"/>
+          <g transform="translate(200 32)"><circle r="22" fill="#FFFFFF" stroke="#E3E7EE"/><use href="#i-mic" x="-11" y="-11" width="22" height="22" style="color:#0E7A6C"/></g>
+          <g transform="translate(345 284)"><circle r="22" fill="#FFFFFF" stroke="#E3E7EE"/><use href="#i-flag" x="-11" y="-11" width="22" height="22" style="color:#7568D9"/></g>
+          <g transform="translate(55 284)"><circle r="22" fill="#FFFFFF" stroke="#E3E7EE"/><use href="#i-clock" x="-11" y="-11" width="22" height="22" style="color:#C98A2E"/></g>
+        </g>
+        <g class="orbit-ring-2">
+          <circle cx="200" cy="200" r="118" fill="none" stroke="#DCE3EE" stroke-width="1.5"/>
+          <g transform="translate(318 200)"><circle r="19" fill="#FFFFFF" stroke="#E3E7EE"/><use href="#i-star" x="-10" y="-10" width="20" height="20" style="color:#0E7A6C"/></g>
+          <g transform="translate(82 200)"><circle r="19" fill="#FFFFFF" stroke="#E3E7EE"/><use href="#i-people" x="-10" y="-10" width="20" height="20" style="color:#7568D9"/></g>
+        </g>
+        <g class="orbit-ring-1">
+          <circle cx="200" cy="200" r="78" fill="none" stroke="#159B8A" stroke-opacity=".35" stroke-dasharray="1 7" stroke-linecap="round" stroke-width="3"/>
+          <circle cx="200" cy="122" r="5" fill="#F2B45B"/>
+          <circle cx="278" cy="200" r="4" fill="#159B8A"/>
+        </g>
+        <circle cx="200" cy="200" r="54" fill="url(#g-core)"/>
+        <use href="#i-interview" x="178" y="178" width="44" height="44" style="color:#3CC9B4"/>
+      </svg>
+    </div>
+
+    <div class="about-copy">
+      <p class="eyebrow eyebrow--dark reveal">About the Coach</p>
+      <h2 id="about-title" class="reveal">Practical guidance for real-world growth</h2>
+      <p class="reveal">A Global Interview &amp; Soft Skills Coach offering online and offline coaching in interview preparation, soft skills, personality development, communication skills, human analysis and graphology.</p>
+      <p class="reveal">The training is designed to help learners improve confidence, communication and professional attitude — across professional, social and personal life.</p>
+
+      <div class="credential reveal">
+        <span class="ico"><svg aria-hidden="true"><use href="#i-cap"/></svg></span>
+        <div><strong>MBA in Human Resources</strong><span>Interview &amp; soft-skills coaching, online and offline</span></div>
+      </div>
+
+      <h3 class="reveal">Who the coach works with</h3>
+      <ul class="works-with reveal">
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Students and graduates preparing for campus placements</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Job seekers, and candidates preparing for government jobs and bank PO exams</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>MBA admission applicants</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Candidates preparing for corporate interviews</li>
+        <li><svg aria-hidden="true"><use href="#i-check"/></svg>Teachers, professionals, managers and entrepreneurs</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     TRAINING PROGRAMS
+     ========================================================= -->
+<section class="section section--white" id="programs" aria-labelledby="programs-title">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="eyebrow eyebrow--dark reveal">Training Programs</p>
+      <h2 id="programs-title" class="reveal">Coaching built around the skills you need next</h2>
+      <p class="reveal">Choose a focused program, or combine topics into a plan that fits your interview, study or career goal.</p>
+    </div>
+
+    <div class="card-grid">
+      <article class="card reveal" style="--d:.0s">
+        <span class="card-num" aria-hidden="true">01</span>
+        <span class="card-icon"><svg aria-hidden="true"><use href="#i-interview"/></svg></span>
+        <h3>Interview Preparation</h3>
+        <p>Build structured answers, improve interview communication and practise presenting your skills with confidence.</p>
+        <a class="card-link" href="#contact" data-interest="Interview Preparation">Enquire <span class="visually-hidden">about Interview Preparation</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="card reveal" style="--d:.06s">
+        <span class="card-num" aria-hidden="true">02</span>
+        <span class="card-icon"><svg aria-hidden="true"><use href="#i-people"/></svg></span>
+        <h3>Soft Skills Development</h3>
+        <p>Strengthen workplace communication, interpersonal skills, professional behaviour and collaboration.</p>
+        <a class="card-link" href="#contact" data-interest="Soft Skills">Enquire <span class="visually-hidden">about Soft Skills Development</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="card reveal" style="--d:.12s">
+        <span class="card-num" aria-hidden="true">03</span>
+        <span class="card-icon"><svg aria-hidden="true"><use href="#i-star"/></svg></span>
+        <h3>Personality &amp; Confidence Development</h3>
+        <p>Work on self-confidence, positive thinking, self-esteem and professional presence.</p>
+        <a class="card-link" href="#contact" data-interest="Personal Development">Enquire <span class="visually-hidden">about Personality &amp; Confidence Development</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="card reveal" style="--d:.18s">
+        <span class="card-num" aria-hidden="true">04</span>
+        <span class="card-icon"><svg aria-hidden="true"><use href="#i-mic"/></svg></span>
+        <h3>Communication &amp; Public Speaking</h3>
+        <p>Develop clearer expression, active listening, presentation skills and audience awareness.</p>
+        <a class="card-link" href="#contact" data-interest="Communication">Enquire <span class="visually-hidden">about Communication &amp; Public Speaking</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="card reveal" style="--d:.0s">
+        <span class="card-num" aria-hidden="true">05</span>
+        <span class="card-icon"><svg aria-hidden="true"><use href="#i-heart"/></svg></span>
+        <h3>Life &amp; Behavioural Skills</h3>
+        <p>Explore emotional intelligence, stress management, anger management and conflict management.</p>
+        <a class="card-link" href="#contact" data-interest="Personal Development">Enquire <span class="visually-hidden">about Life &amp; Behavioural Skills</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="card reveal" style="--d:.06s">
+        <span class="card-num" aria-hidden="true">06</span>
+        <span class="card-icon"><svg aria-hidden="true"><use href="#i-target"/></svg></span>
+        <h3>Career Readiness</h3>
+        <p>Prepare for campus placements, job interviews, resume presentation and professional interactions.</p>
+        <a class="card-link" href="#contact" data-interest="Interview Preparation">Enquire <span class="visually-hidden">about Career Readiness</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="card reveal" style="--d:.12s">
+        <span class="card-num" aria-hidden="true">07</span>
+        <span class="card-icon"><svg aria-hidden="true"><use href="#i-flag"/></svg></span>
+        <h3>Professional &amp; Leadership Training</h3>
+        <p>Training options for professionals, managers and entrepreneurs in life skills, behavioural skills and accountability.</p>
+        <a class="card-link" href="#contact" data-interest="Soft Skills">Enquire <span class="visually-hidden">about Professional &amp; Leadership Training</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+      <article class="card card--note reveal" style="--d:.18s">
+        <span class="card-num" aria-hidden="true">08</span>
+        <span class="card-icon"><svg aria-hidden="true"><use href="#i-pen"/></svg></span>
+        <h3>Handwriting Analysis &amp; Graphology</h3>
+        <p>An optional coaching subject exploring the history and practice of handwriting analysis as an area of interest.</p>
+        <p class="note">Offered as a subject of interest only — not as a validated method for assessing personality or job suitability.</p>
+        <a class="card-link" href="#contact" data-interest="Other">Enquire <span class="visually-hidden">about Handwriting Analysis &amp; Graphology</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     SUBJECTS
+     ========================================================= -->
+<section class="section section--dark" id="subjects" aria-labelledby="subjects-title">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow reveal">Subjects</p>
+      <h2 id="subjects-title" class="reveal">Find the subject you want to work on</h2>
+      <p class="reveal">Search or filter by category. You can enquire about any single subject or a combination.</p>
+    </div>
+
+    <div class="subject-tools">
+      <div class="search">
+        <label for="subject-search" class="visually-hidden">Search subjects</label>
+        <svg aria-hidden="true"><use href="#i-search"/></svg>
+        <input id="subject-search" type="search" placeholder="Search subjects, e.g. confidence" autocomplete="off">
+      </div>
+      <div class="chips" role="group" aria-label="Filter subjects by category">
+        <button class="chip" type="button" data-filter="All" aria-pressed="true">All</button>
+        <button class="chip" type="button" data-filter="Career" aria-pressed="false">Career</button>
+        <button class="chip" type="button" data-filter="Personal Growth" aria-pressed="false">Personal Growth</button>
+        <button class="chip" type="button" data-filter="Workplace Skills" aria-pressed="false">Workplace Skills</button>
+        <button class="chip" type="button" data-filter="Special Topics" aria-pressed="false">Special Topics</button>
+      </div>
+    </div>
+
+    <p class="subject-count" id="subject-count" aria-live="polite">Showing 19 of 19 subjects</p>
+
+    <ul class="subject-grid">
+      <li class="subject" data-category="Career"><h3>Interview Skills</h3><div class="subject-meta"><span class="cat" data-c="Career">Career</span><span>Beginner to Expert</span></div></li>
+      <li class="subject" data-category="Career"><h3>Resume Preparation</h3><div class="subject-meta"><span class="cat" data-c="Career">Career</span><span>Beginner to Expert</span></div></li>
+      <li class="subject" data-category="Career"><h3>Soft Skills Development</h3><div class="subject-meta"><span class="cat" data-c="Career">Career</span><span>Beginner to Expert</span></div></li>
+      <li class="subject" data-category="Career"><h3>Communication and Interpersonal Skills</h3><div class="subject-meta"><span class="cat" data-c="Career">Career</span><span>Beginner to Expert</span></div></li>
+      <li class="subject" data-category="Personal Growth"><h3>Life Coaching</h3><div class="subject-meta"><span class="cat" data-c="Personal Growth">Personal Growth</span><span>Beginner to Expert</span></div></li>
+      <li class="subject" data-category="Personal Growth"><h3>Confidence Building</h3><div class="subject-meta"><span class="cat" data-c="Personal Growth">Personal Growth</span><span>Beginner to Expert</span></div></li>
+      <li class="subject" data-category="Personal Growth"><h3>Positive Thinking</h3><div class="subject-meta"><span class="cat" data-c="Personal Growth">Personal Growth</span><span>Beginner to Expert</span></div></li>
+      <li class="subject" data-category="Personal Growth"><h3>Personal Development</h3><div class="subject-meta"><span class="cat" data-c="Personal Growth">Personal Growth</span><span>Beginner to Expert</span></div></li>
+      <li class="subject" data-category="Personal Growth"><h3>Self-Esteem</h3><div class="subject-meta"><span class="cat" data-c="Personal Growth">Personal Growth</span><span>Beginner to Expert</span></div></li>
+      <li class="subject" data-category="Personal Growth"><h3>Understanding the Self</h3><div class="subject-meta"><span class="cat" data-c="Personal Growth">Personal Growth</span><span>Beginner to Expert</span></div></li>
+      <li class="subject" data-category="Personal Growth"><h3>Understanding the World</h3><div class="subject-meta"><span class="cat" data-c="Personal Growth">Personal Growth</span><span>Beginner to Expert</span></div></li>
+      <li class="subject" data-category="Workplace Skills"><h3>Time Management</h3><div class="subject-meta"><span class="cat" data-c="Workplace Skills">Workplace Skills</span><span>Beginner to Expert</span></div></li>
+      <li class="subject" data-category="Workplace Skills"><h3>Conflict Management</h3><div class="subject-meta"><span class="cat" data-c="Workplace Skills">Workplace Skills</span><span>Beginner to Expert</span></div></li>
+      <li class="subject" data-category="Workplace Skills"><h3>Stress Management and Emotional Intelligence</h3><div class="subject-meta"><span class="cat" data-c="Workplace Skills">Workplace Skills</span><span>Beginner to Expert</span></div></li>
+      <li class="subject" data-category="Workplace Skills"><h3>Anger Management</h3><div class="subject-meta"><span class="cat" data-c="Workplace Skills">Workplace Skills</span><span>Beginner to Expert</span></div></li>
+      <li class="subject" data-category="Workplace Skills"><h3>Human Behavior</h3><div class="subject-meta"><span class="cat" data-c="Workplace Skills">Workplace Skills</span><span>Beginner to Expert</span></div></li>
+      <li class="subject" data-category="Workplace Skills"><h3>Accountability, Representation and Control</h3><div class="subject-meta"><span class="cat" data-c="Workplace Skills">Workplace Skills</span><span>Beginner to Expert</span></div></li>
+      <li class="subject" data-category="Special Topics"><h3>Graphology</h3><div class="subject-meta"><span class="cat" data-c="Special Topics">Special Topics</span><span>Beginner to Expert</span></div></li>
+      <li class="subject" data-category="Special Topics"><h3>Handwriting Analysis</h3><div class="subject-meta"><span class="cat" data-c="Special Topics">Special Topics</span><span>Beginner to Expert</span></div></li>
+    </ul>
+    <p class="subject-empty" id="subject-empty" hidden>No subjects match your search. Try a different word, or <a href="#contact" style="color:var(--teal-light)">ask us about it directly</a>.</p>
+    <p class="level-note">“Beginner to Expert” describes the range of learners each subject can be adapted for. It is not a formal qualification level.</p>
+  </div>
+</section>
+
+<!-- =========================================================
+     LEARNING APPROACH
+     ========================================================= -->
+<section class="section" id="approach" aria-labelledby="approach-title">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="eyebrow eyebrow--dark reveal">Learning Approach</p>
+      <h2 id="approach-title" class="reveal">Practical learning, personalised to your goals</h2>
+    </div>
+    <div class="steps-wrap">
+      <svg class="steps-line" viewBox="0 0 100 2" preserveAspectRatio="none" aria-hidden="true" focusable="false"><line x1="0" y1="1" x2="100" y2="1" stroke="#159B8A" stroke-width="2" vector-effect="non-scaling-stroke"/></svg>
+      <ol class="steps">
+      <li class="step reveal" style="--d:0s"><span class="step-badge" aria-hidden="true">1</span><h3>Understand your goal</h3><p>Identify the interview, communication or professional skill you want to improve.</p></li>
+      <li class="step reveal" style="--d:.1s"><span class="step-badge" aria-hidden="true">2</span><h3>Build a learning plan</h3><p>Select relevant topics and a suitable online or offline format.</p></li>
+      <li class="step reveal" style="--d:.2s"><span class="step-badge" aria-hidden="true">3</span><h3>Practise and improve</h3><p>Work through practical exercises, discussions and guided preparation.</p></li>
+      <li class="step reveal" style="--d:.3s"><span class="step-badge" aria-hidden="true">4</span><h3>Reflect and apply</h3><p>Identify improvement areas and apply the learning in interviews, study and work.</p></li>
+      </ol>
+    </div>
+    <p class="disclaimer">Coaching supports your preparation and skill development. It does not guarantee placements, job offers or interview results.</p>
+  </div>
+</section>
+
+<!-- =========================================================
+     LEARNING MODULES
+     ========================================================= -->
+<section class="section section--white" id="modules" aria-labelledby="modules-title">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow eyebrow--dark reveal">Inside the Soft-Skills Guide</p>
+      <h2 id="modules-title" class="reveal">Explore the learning modules</h2>
+      <p class="reveal">A preview of topics covered in the soft-skills curriculum. Open any module to see what it includes.</p>
+    </div>
+
+    <div class="modules">
+      <details class="module reveal">
+        <summary><span class="m-num">01</span><span class="m-title">Introduction to soft skills<small>What they are and why they matter</small></span><svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="module-body"><p>How communication, attitude and interpersonal habits work alongside technical knowledge — and why they shape how others experience working with you.</p></div>
+      </details>
+      <details class="module reveal">
+        <summary><span class="m-num">02</span><span class="m-title">Proxemics and personal space<small>Intimate, personal, social and public zones</small></span><svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="module-body"><p>An introduction to the four commonly described space zones and how distance affects comfort in conversations, meetings and interviews.</p><p class="caution">Comfortable and appropriate distance varies by culture, context and individual preference — these zones are a guide for awareness, not universal rules.</p></div>
+      </details>
+      <details class="module reveal">
+        <summary><span class="m-num">03</span><span class="m-title">Self-esteem<small>A steady foundation for confidence</small></span><svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="module-body"><p>Recognising your strengths, managing self-talk and building confidence through preparation and small, repeated wins.</p></div>
+      </details>
+      <details class="module reveal">
+        <summary><span class="m-num">04</span><span class="m-title">IPS-15: interpersonal habits<small>Fifteen habits for better relationships</small></span><svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="module-body"><ol>
+          <li>Be responsible</li><li>Choose your words carefully</li><li>Never be sarcastic</li><li>Practise humility</li><li>Discuss but never argue</li><li>Stop playing the blame game</li><li>Never complain or criticise</li><li>Turn your promise into commitment</li><li>Never gossip</li><li>Never bear grudges</li><li>Be grateful, never expect gratitude</li><li>Be considerate</li><li>Accept mistakes willingly and at once</li><li>Think win-win</li><li>Develop a sense of humour</li>
+        </ol></div>
+      </details>
+      <details class="module reveal">
+        <summary><span class="m-num">05</span><span class="m-title">Face language and public image<small>Expression, presentation and first impressions</small></span><svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="module-body"><p>How facial expression, grooming and presentation contribute to the impression you create — and how to present yourself authentically and professionally.</p></div>
+      </details>
+      <details class="module reveal">
+        <summary><span class="m-num">06</span><span class="m-title">Personality and attitude<small>How attitude shows up at work</small></span><svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="module-body"><p>Understanding the link between attitude, behaviour and professional relationships, and practising a constructive, solution-focused outlook.</p></div>
+      </details>
+      <details class="module reveal">
+        <summary><span class="m-num">07</span><span class="m-title">Smart-12: professionalism guidelines<small>Twelve habits for professional settings</small></span><svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="module-body"><ol>
+          <li>Be comfortable speaking with new people</li><li>Make a good first impression</li><li>Maintain attentive eye contact</li><li>Use confident posture</li><li>Be approachable</li><li>Become a thoughtful conversationalist</li><li>Listen actively</li><li>Stay in touch professionally</li><li>Participate in social and professional settings</li><li>Face fears constructively</li><li>Be proactive</li><li>Stay open-minded and respectful</li>
+        </ol></div>
+      </details>
+      <details class="module reveal">
+        <summary><span class="m-num">08</span><span class="m-title">Kinesics and body language<small>Handshake, posture, gestures and more</small></span><svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="module-body"><ul class="bullets">
+          <li>Handshake</li><li>Arm crossing</li><li>Eye contact</li><li>Posture</li><li>Facial expression</li><li>Hand gestures</li>
+        </ul><p class="caution">Body-language cues depend on context and culture. They can help you communicate more clearly, but they are not a reliable way to read someone’s thoughts or intentions.</p></div>
+      </details>
+      <details class="module reveal">
+        <summary><span class="m-num">09</span><span class="m-title">Managing a group during a presentation<small>Holding attention and handling questions</small></span><svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="module-body"><p>Practical techniques for engaging an audience, keeping a session on track, managing questions and staying composed in front of a group.</p></div>
+      </details>
+      <details class="module reveal">
+        <summary><span class="m-num">10</span><span class="m-title">Understanding people<small>Perspective, empathy and listening</small></span><svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="module-body"><p>Seeing situations from other people’s point of view, asking better questions and responding with empathy.</p></div>
+      </details>
+      <details class="module reveal">
+        <summary><span class="m-num">11</span><span class="m-title">Barriers to effective people skills<small>What gets in the way — and how to work around it</small></span><svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></summary>
+        <div class="module-body"><p>Common obstacles such as assumptions, poor listening, defensiveness and unclear expression, with practical ways to reduce them.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     WHO CAN BENEFIT + LANGUAGES & FORMATS
+     ========================================================= -->
+<section class="section section--navy" id="audience" aria-labelledby="audience-title">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="eyebrow reveal">Who Can Benefit?</p>
+      <h2 id="audience-title" class="reveal">Coaching for every stage of your career</h2>
+    </div>
+    <div class="audience-grid">
+      <article class="audience reveal" style="--d:0s"><span class="a-ico"><svg aria-hidden="true"><use href="#i-cap"/></svg></span><h3>Students &amp; Graduates</h3><p>Interview practice, campus placement preparation and communication.</p></article>
+      <article class="audience reveal" style="--d:.08s"><span class="a-ico"><svg aria-hidden="true"><use href="#i-docsearch"/></svg></span><h3>Job Seekers</h3><p>Interview readiness, resume preparation and confidence-building.</p></article>
+      <article class="audience reveal" style="--d:.16s"><span class="a-ico"><svg aria-hidden="true"><use href="#i-briefcase"/></svg></span><h3>Working Professionals</h3><p>Workplace communication, behavioural skills and professional development.</p></article>
+      <article class="audience reveal" style="--d:.24s"><span class="a-ico"><svg aria-hidden="true"><use href="#i-chart"/></svg></span><h3>Managers &amp; Entrepreneurs</h3><p>Public speaking, leadership-related soft skills and interpersonal effectiveness.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="formats" aria-labelledby="formats-title">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="eyebrow eyebrow--dark reveal">Languages &amp; Formats</p>
+      <h2 id="formats-title" class="reveal">Learn in the language and format that suits you</h2>
+    </div>
+    <div class="format-card reveal">
+      <h3><svg aria-hidden="true"><use href="#i-lang"/></svg>Training languages</h3>
+      <div class="lang-row">
+        <span class="lang">English</span>
+        <span class="lang" lang="hi">हिन्दी <span lang="en">Hindi</span></span>
+        <span class="lang" lang="te">తెలుగు <span lang="en">Telugu</span></span>
+        <span class="lang" lang="or">ଓଡ଼ିଆ <span lang="en">Odia</span></span>
+      </div>
+    </div>
+    <div class="formats">
+      <div class="format-card reveal"><h3><svg aria-hidden="true"><use href="#i-laptop"/></svg>Online classes</h3><p>Join live sessions from wherever you are — suited to learners in different cities and locations.</p></div>
+      <div class="format-card reveal" style="--d:.08s"><h3><svg aria-hidden="true"><use href="#i-pin"/></svg>Offline coaching</h3><p>In-person coaching is available subject to location and availability. Please confirm details when you enquire.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     FAQ
+     ========================================================= -->
+<section class="section section--white" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <p class="eyebrow eyebrow--dark reveal">FAQs</p>
+      <h2 id="faq-title" class="reveal">Frequently asked questions</h2>
+    </div>
+    <div class="faq">
+      <div class="faq-item reveal"><h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-1" id="faq-1-btn">Who can join the coaching?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+        <div class="faq-panel" id="faq-1" role="region" aria-labelledby="faq-1-btn" aria-hidden="true"><div><p>Students, graduates, job seekers, government-job and bank PO exam candidates, MBA applicants, working professionals, managers and entrepreneurs.</p></div></div></div>
+      <div class="faq-item reveal"><h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-2" id="faq-2-btn">Are online classes available?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+        <div class="faq-panel" id="faq-2" role="region" aria-labelledby="faq-2-btn" aria-hidden="true"><div><p>Yes. You can attend online classes from anywhere.</p></div></div></div>
+      <div class="faq-item reveal"><h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-3" id="faq-3-btn">Which languages are supported?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+        <div class="faq-panel" id="faq-3" role="region" aria-labelledby="faq-3-btn" aria-hidden="true"><div><p>Coaching is offered in English, Hindi, Telugu and Odia.</p></div></div></div>
+      <div class="faq-item reveal"><h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-4" id="faq-4-btn">Can I choose a specific subject?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+        <div class="faq-panel" id="faq-4" role="region" aria-labelledby="faq-4-btn" aria-hidden="true"><div><p>Yes. You can enquire about individual subjects such as interview skills, communication, confidence building, time management and emotional intelligence.</p></div></div></div>
+      <div class="faq-item reveal"><h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-5" id="faq-5-btn">Is offline coaching available?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+        <div class="faq-panel" id="faq-5" role="region" aria-labelledby="faq-5-btn" aria-hidden="true"><div><p>Both online and offline coaching are offered. Offline location, schedule and availability are confirmed during your enquiry.</p></div></div></div>
+      <div class="faq-item reveal"><h3><button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-6" id="faq-6-btn">Is a job or placement guaranteed?<span class="faq-icon" aria-hidden="true"></span></button></h3>
+        <div class="faq-panel" id="faq-6" role="region" aria-labelledby="faq-6-btn" aria-hidden="true"><div><p>No. Coaching supports your preparation and skill development; hiring decisions always remain with employers.</p></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- =========================================================
+     CONTACT / ENQUIRY
+     ========================================================= -->
+<section class="section section--dark" id="contact" aria-labelledby="contact-title">
+  <div class="container contact-grid">
+    <div class="contact-aside">
+      <p class="eyebrow reveal">Contact</p>
+      <h2 id="contact-title" class="reveal">Take the next step in your professional growth</h2>
+      <p class="reveal">Tell us what you are preparing for and which skills you want to develop.</p>
+      <ul class="contact-points reveal">
+        <li><svg aria-hidden="true"><use href="#i-target"/></svg>Share your goal — an interview, exam, promotion or personal growth.</li>
+        <li><svg aria-hidden="true"><use href="#i-globe"/></svg>Choose online or offline coaching.</li>
+        <li><svg aria-hidden="true"><use href="#i-lang"/></svg>Pick English, Hindi, Telugu or Odia.</li>
+      </ul>
+    </div>
+
+    <div class="form-card reveal">
+      <form id="enquiry-form" novalidate>
+        <div class="form-grid">
+          <div class="form-status" id="form-status" role="status" aria-live="polite" tabindex="-1"></div>
+
+          <div class="field">
+            <label for="f-name">Full name <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="name-error">
+            <p class="field-error" id="name-error"></p>
+          </div>
+          <div class="field">
+            <label for="f-email">Email address <span class="req" aria-hidden="true">*</span></label>
+            <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="email-error">
+            <p class="field-error" id="email-error"></p>
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone / WhatsApp <span class="opt">(optional)</span></label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" aria-describedby="phone-error">
+            <p class="field-error" id="phone-error"></p>
+          </div>
+          <div class="field">
+            <label for="f-role">I am a <span class="req" aria-hidden="true">*</span></label>
+            <select id="f-role" name="role" required aria-describedby="role-error">
+              <option value="">Select one</option>
+              <option>Student</option><option>Graduate</option><option>Job Seeker</option>
+              <option>Professional</option><option>Manager</option><option>Entrepreneur</option>
+            </select>
+            <p class="field-error" id="role-error"></p>
+          </div>
+          <div class="field">
+            <label for="f-interest">Interested in <span class="req" aria-hidden="true">*</span></label>
+            <select id="f-interest" name="interest" required aria-describedby="interest-error">
+              <option value="">Select one</option>
+              <option>Interview Preparation</option><option>Soft Skills</option><option>Communication</option>
+              <option>Personal Development</option><option>Other</option>
+            </select>
+            <p class="field-error" id="interest-error"></p>
+          </div>
+          <div class="field">
+            <label for="f-format">Preferred format</label>
+            <select id="f-format" name="format">
+              <option>Not sure</option><option>Online</option><option>Offline</option>
+            </select>
+          </div>
+          <div class="field field--full">
+            <label for="f-language">Preferred language</label>
+            <select id="f-language" name="language">
+              <option>English</option><option>Hindi</option><option>Telugu</option><option>Odia</option>
+            </select>
+          </div>
+          <div class="field field--full">
+            <label for="f-message">Message <span class="req" aria-hidden="true">*</span></label>
+            <textarea id="f-message" name="message" required aria-describedby="message-error" placeholder="What are you preparing for, and what would you like to improve?"></textarea>
+            <p class="field-error" id="message-error"></p>
+          </div>
+
+          <!-- Honeypot spam trap: hidden from people and screen readers -->
+          <div class="hp-field" aria-hidden="true">
+            <label for="f-website">Leave this field empty</label>
+            <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="field field--full">
+            <label class="consent" for="f-consent">
+              <input id="f-consent" name="consent" type="checkbox" required aria-describedby="consent-error">
+              <span>I agree to be contacted about this enquiry using the details I have provided. <span class="req" aria-hidden="true">*</span></span>
+            </label>
+            <p class="field-error" id="consent-error"></p>
+          </div>
+
+          <div class="field--full form-footer">
+            <p class="privacy-note">Your details are used only to respond to your enquiry and are not shared for marketing. Fields marked <span class="req">*</span> are required.</p>
+            <button class="btn" type="submit"><span class="btn-label">Send Enquiry</span><svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
 </main>
 
-<footer><div class="wrap"><span>SoftSkills Guide</span><span>Contact: info@softskillsguide.com</span><span>Mon–Fri, 9am–6pm</span></div></footer>
+<!-- =========================================================
+     FOOTER
+     ========================================================= -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="#home" aria-label="MND CODE — back to top">
+          <img class="brand-mark" src="assets/logo/favicon.svg" alt="" width="36" height="36">
+          <span class="brand-text">MND CODE<small>Interview &amp; Soft Skills</small></span>
+        </a>
+        <p class="footer-tagline">Build the skills. Strengthen your confidence. Make your next opportunity count.</p>
+        <p>Interview confidently. Communicate clearly. Grow professionally.</p>
+      </div>
+      <nav aria-label="Footer">
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="#about">About the Coach</a></li>
+          <li><a href="#programs">Training Programs</a></li>
+          <li><a href="#subjects">Subjects</a></li>
+          <li><a href="#approach">Learning Approach</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h3>Get in touch</h3>
+        <ul>
+          <li><a href="#faq">FAQs</a></li>
+          <li><a href="#contact">Send an enquiry</a></li>
+          <li><a href="#formats">Languages &amp; formats</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 MND CODE. All rights reserved.</span>
+      <span>Coaching supports preparation; it does not guarantee jobs or placements.</span>
+    </div>
+  </div>
+</footer>
 
-<script>
-var Z=[
-{n:"Intimate zone",d:"0–18 in",r:"Parents, spouse, children",role:"Giver",rules:"Be emotional, be transparent, take criticism as advice."},
-{n:"Personal zone",d:"18 in–4 ft",r:"Siblings, best friends, well-wishers",role:"Advisor",rules:"Never expect, help only when needed, keep financial help within limits."},
-{n:"Social zone",d:"4–12 ft",r:"Relatives, colleagues, neighbours",role:"Taker",rules:"Don’t accept criticism, help if you have time, no financial help."},
-{n:"Public zone",d:"12 ft and beyond",r:"Acquaintances, mutual friends, referrals",role:"Ignore",rules:"Ignore them."}];
-var info=document.getElementById("zinfo"),list=document.getElementById("zlist");
-Z.forEach(function(z){var e=document.createElement("div");e.innerHTML="<h3>"+z.n+"</h3><p>"+z.d+" · "+z.r+"</p><em>Role: "+z.role+". "+z.rules+"</em>";list.appendChild(e)});
-function show(i){var z=Z[i];info.innerHTML="<h3>"+z.n+" <span style='color:var(--muted);font-weight:500;font-size:16px'>"+z.d+"</span></h3><p>"+z.r+". Your role: <b>"+z.role+"</b>. "+z.rules+"</p>";
-document.querySelectorAll(".ring").forEach(function(r){r.classList.toggle("on",+r.dataset.z===i)})}
-document.querySelectorAll(".ring").forEach(function(r){
-r.addEventListener("click",function(){show(+r.dataset.z)});
-r.addEventListener("keydown",function(e){if(e.key==="Enter"||e.key===" "){e.preventDefault();show(+r.dataset.z)}})});
-show(0);
-</script>
+<script src="js/main.js" defer></script>
 </body>
 </html>
